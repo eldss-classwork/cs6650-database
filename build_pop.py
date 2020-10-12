@@ -36,11 +36,11 @@ with open("populate.sql", "w") as file:
     file.write(f'({repr(resorts[-1])});\n\n')
 
     # Populate skiers
-    # Break up into 50 lines of 1000
-    skierID = 1
+    # Break up into 50 lines of 1000 (a few extras for good measure)
+    skierID = 0
     for _ in range(50):
         file.write("INSERT INTO Skiers(skierID) VALUES ")
-        for _ in range(999):
+        for _ in range(1000):
             file.write(f'({skierID}),')
             skierID += 1
         file.write(f'({skierID});\n')
