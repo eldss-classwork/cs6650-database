@@ -59,4 +59,4 @@ with open("populate.sql", "w") as file:
         file.write("INSERT INTO Lifts(liftNum, resortID, vertical) VALUES ")
         for j in range(len(resorts)-1):
             file.write(f'({i},{repr(resorts[j])},{i * vertical_multiplier}),')
-        file.write(f'({i},{repr(resorts[j])},{i * vertical_multiplier});\n')
+        file.write(f'({i},{repr(resorts[-1])},{i * vertical_multiplier});\n')
