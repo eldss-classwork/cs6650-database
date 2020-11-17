@@ -35,6 +35,4 @@ CREATE TABLE LiftRides (
     `time` INT NOT NULL,
     FOREIGN KEY (skierID) REFERENCES Skiers(skierID),
     FOREIGN KEY (liftNum, resortID) REFERENCES Lifts(liftNum, resortID)
-    -- CONSTRAINT day_in_bounds CHECK (`day` > 0 AND `day` < 367),
-    -- CONSTRAINT time_in_bounds CHECK (`time` > 0 AND `time` < 421)
 );
