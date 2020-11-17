@@ -27,14 +27,14 @@ CREATE TABLE Lifts (
 );
 
 CREATE TABLE LiftRides (
-    rideID INT PRIMARY KEY,
+    rideID INT PRIMARY KEY AUTO_INCREMENT,
     skierID INT NOT NULL,
     liftNum INT NOT NULL,
     resortID VARCHAR(40) NOT NULL,
     `day` INT NOT NULL,
     `time` INT NOT NULL,
     FOREIGN KEY (skierID) REFERENCES Skiers(skierID),
-    FOREIGN KEY (liftNum, resortID) REFERENCES Lifts(liftNum, resortID),
-    CONSTRAINT day_in_bounds CHECK (`day` > 0 AND `day` < 367),
-    CONSTRAINT time_in_bounds CHECK (`time` > 0 AND `time` < 421)
+    FOREIGN KEY (liftNum, resortID) REFERENCES Lifts(liftNum, resortID)
+    -- CONSTRAINT day_in_bounds CHECK (`day` > 0 AND `day` < 367),
+    -- CONSTRAINT time_in_bounds CHECK (`time` > 0 AND `time` < 421)
 );
